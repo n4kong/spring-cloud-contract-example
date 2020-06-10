@@ -1,17 +1,15 @@
-package io.pivotal.controller;
+package com.demo.controller;
 
-import io.pivotal.model.Response;
-import io.pivotal.model.User;
-import io.pivotal.service.UserService;
+import com.demo.service.UserService;
+import com.demo.model.Response;
+import com.demo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.function.EntityResponse;
 
 import java.util.List;
 

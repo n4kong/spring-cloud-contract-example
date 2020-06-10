@@ -13,20 +13,28 @@ Contract.make {
         }
         urlPath("/users") {
             queryParameters {
-                parameter 'limit': 100
+                parameter 'limit': $(consumer(matching("[0-9]+")), producer(100))
                 parameter 'filter': $(consumer(equalTo("email")))
-                parameter 'gender': $(consumer(containing("[mf]")), producer('mf'))
+                parameter 'gender': $(consumer(regex("[m|f]")), producer('m'))
                 parameter 'offset': $(consumer(matching("[0-9]+")), producer("1234"))
             }
         }
     }
     response {
         status OK()
+        headers {
+            contentType(applicationJson())
+        }
         body(
                 status: 'success',
-                data: [
-                        id: $(consumer(123456), producer(anyNumber())),
-                        name: $(anyNonBlankString())
+                data: [[
+                               id: $(consumer(123456), producer(anyNumber())),
+                               name: $(anyNonBlankString())
+                       ],
+                       [
+                               id: $(consumer(123457), producer(anyNumber())),
+                               name: $(anyNonBlankString())
+                       ]
                 ]
         )
     }
@@ -73,12 +81,15 @@ Contract.make {
         }
         urlPath("/users")
         body(
-                requestId: $(consumer(anyUuid()), producer("FSfSFSF1231312312FDGD")),
+                requestId: $(consumer(anyUuid()), producer("11e2e42c-ab36-11ea-bb37-0242ac130002")),
                 name: $(consumer(anyNonBlankString()))
         )
     }
     response {
         status OK()
+        headers {
+            contentType(applicationJson())
+        }
         body(
                 status: 'success',
                 data: [

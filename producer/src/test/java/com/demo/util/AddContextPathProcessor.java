@@ -1,4 +1,4 @@
-package io.pivotal.util;
+package com.demo.util;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.restdocs.operation.OperationRequest;

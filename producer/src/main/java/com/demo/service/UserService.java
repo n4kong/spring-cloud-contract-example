@@ -1,6 +1,6 @@
-package io.pivotal.service;
+package com.demo.service;
 
-import io.pivotal.model.User;
+import com.demo.model.User;
 import org.springframework.stereotype.Service;
 
 import java.util.List;

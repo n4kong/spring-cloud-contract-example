@@ -1,4 +1,4 @@
-package io.pivotal.model;
+package com.demo.model;
 
 public class Response {
     private String status;

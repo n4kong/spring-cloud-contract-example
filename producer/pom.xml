@@ -90,7 +90,7 @@
 				<version>${spring-cloud-contract.version}</version>
 				<extensions>true</extensions>
 				<configuration>
-					<packageWithBaseClasses>io.pivotal</packageWithBaseClasses>
+					<packageWithBaseClasses>com.demo.contract</packageWithBaseClasses>
 <!--					<convertToYaml>true</convertToYaml>-->
 <!--					<failOnInProgress>false</failOnInProgress>-->
 				</configuration>

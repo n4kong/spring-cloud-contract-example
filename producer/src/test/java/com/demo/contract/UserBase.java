@@ -1,9 +1,10 @@
-package io.pivotal;
+package com.demo.contract;
 
-import io.pivotal.controller.UserController;
-import io.pivotal.model.User;
-import io.pivotal.service.UserService;
-import io.pivotal.util.AddContextPathProcessor;
+import com.demo.ProducerServerApplication;
+import com.demo.controller.UserController;
+import com.demo.service.UserService;
+import com.demo.model.User;
+import com.demo.util.AddContextPathProcessor;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;
 import org.junit.Rule;
