@@ -27,7 +27,7 @@ public class ProducerService {
         httpHeaders.add("key","value");
         httpHeaders.add("Cookie","another_key=another_value");
 
-        ResponseEntity<UserResponse> response = restTemplate.exchange(uri + "/users?limit=101&filter=email&gender=m&offset=1234", HttpMethod.GET, new HttpEntity<>(httpHeaders), UserResponse.class);
+        ResponseEntity<UserResponse> response = restTemplate.exchange(uri + "/users?limit=1094818791&filter=email&gender=m&offset=1234", HttpMethod.GET, new HttpEntity<>(httpHeaders), UserResponse.class);
         return response.getBody().getData();
     }
 

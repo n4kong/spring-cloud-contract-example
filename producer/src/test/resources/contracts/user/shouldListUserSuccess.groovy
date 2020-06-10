@@ -13,7 +13,7 @@ Contract.make {
         }
         urlPath("/users") {
             queryParameters {
-                parameter 'limit': $(consumer(matching("[0-9]+")), producer(100))
+                parameter 'limit': $(anyNumber())
                 parameter 'filter': $(consumer(equalTo("email")))
                 parameter 'gender': $(consumer(regex("[m|f]")), producer('m'))
                 parameter 'offset': $(consumer(matching("[0-9]+")), producer("1234"))

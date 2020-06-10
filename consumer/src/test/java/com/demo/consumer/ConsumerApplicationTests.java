@@ -44,7 +44,7 @@ public class ConsumerApplicationTests {
 		// given:
 		User user = new User();
 		user.setName("John");
-		user.setRequestId("11e2e42c-ab36-11ea-bb37-0242ac130002");
+		user.setRequestId("11e2e42c-ab36-11ea-bb37-0242ac130003");
 	    // when:
 		User createdUser = producerService.createUser(user);
 		// then:
