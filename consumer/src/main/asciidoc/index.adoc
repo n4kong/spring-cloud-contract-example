@@ -1,0 +1,96 @@
+= Demo API
+thiagotn@gmail.com
+:toc: left
+
+== Introduction
+
+This Demo API is intended to make it easy for you to understand how to use Spring REST Docs to produce high-quality documentation for your RESTful services.
+
+== Resources
+
+=== Create Product
+
+==== Login Mobile Client
+
+Api for creating product
+
+.curl request
+include::{snippets}/LoginMobileClientTest_validate_shouldMarkNotValidUser/curl-request.adoc[]
+
+.request
+include::{snippets}/LoginMobileClientTest_validate_shouldMarkNotValidUser/request-body.adoc[]
+
+.response
+include::{snippets}/LoginMobileClientTest_validate_shouldMarkNotValidUser/response-body.adoc[]
+
+==== Login Web Client
+
+.curl request
+include::{snippets}/LoginWebClientTest_validate_shouldMarkNotValidUser/curl-request.adoc[]
+
+.request body
+include::{snippets}/LoginWebClientTest_validate_shouldMarkNotValidUser/request-body.adoc[]
+
+.resonse body
+include::{snippets}/LoginWebClientTest_validate_shouldMarkNotValidUser/response-body.adoc[]
+
+
+
+=== Post Api Example
+
+Api for post
+
+.curl request
+include::{snippets}/PostApiExampleTest_validate_some_spacial_name/curl-request.adoc[]
+
+.request
+include::{snippets}/PostApiExampleTest_validate_some_spacial_name/request-body.adoc[]
+
+.response
+include::{snippets}/PostApiExampleTest_validate_some_spacial_name/response-body.adoc[]
+
+== List Users 
+
+=== List User Success
+Given list user with correct request parameters
+
+.curl request
+include::{snippets}/UserTest_validate_list_user_success/curl-request.adoc[]
+
+.request
+include::{snippets}/UserTest_validate_list_user_success/request-body.adoc[]
+
+.response
+include::{snippets}/UserTest_validate_list_user_success/http-response.adoc[]
+
+=== List User Not Found
+Given list user with no users found and return
+
+.curl request
+include::{snippets}/UserTest_validate_list_User_Not_Found/curl-request.adoc[]
+
+.response
+include::{snippets}/UserTest_validate_list_User_Not_Found/http-response.adoc[]
+
+== Create User
+
+=== Create User Success
+Given list user with correct request parameters
+
+.curl request
+include::{snippets}/UserTest_validate_create_User_Success/curl-request.adoc[]
+
+.request
+include::{snippets}/UserTest_validate_create_User_Success/request-body.adoc[]
+
+.response
+include::{snippets}/UserTest_validate_create_User_Success/http-response.adoc[]
+
+
+
+
+
+== Contributions
+
+This Demo API is intended to make it easy for you to understand how to use Spring REST Docs to produce high-quality documentation for your RESTful services. However, we can’t achieve that goal without your contributions.
+Feel free to contribute to this repo (https://github.com/thiagotn/demo-api/), sending pull requests any time :)
