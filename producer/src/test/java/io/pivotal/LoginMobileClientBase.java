@@ -14,7 +14,7 @@ import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.docu
 import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.documentationConfiguration;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = LoginServerApplication.class)
+@SpringBootTest(classes = ProducerServerApplication.class)
 public abstract class LoginMobileClientBase {
 
     private static final String OUTPUT = "target/generated-snippets";

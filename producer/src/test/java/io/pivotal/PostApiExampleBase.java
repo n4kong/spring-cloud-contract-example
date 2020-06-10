@@ -1,6 +1,5 @@
 package io.pivotal;
 
-import io.pivotal.controller.PostApiExampleController;
 import io.pivotal.util.AddContextPathProcessor;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;
@@ -18,7 +17,7 @@ import static org.springframework.restdocs.mockmvc.MockMvcRestDocumentation.docu
 import static org.springframework.restdocs.operation.preprocess.Preprocessors.prettyPrint;
 
 @RunWith(SpringRunner.class)
-@SpringBootTest(classes = LoginServerApplication.class)
+@SpringBootTest(classes = ProducerServerApplication.class)
 public abstract class PostApiExampleBase {
 
     @Rule

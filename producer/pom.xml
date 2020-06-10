@@ -3,12 +3,12 @@
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
-	<groupId>io.pivotal</groupId>
-	<artifactId>loginService</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<groupId>com.demo</groupId>
+	<artifactId>procedureService</artifactId>
+	<version>0.0.1</version>
 	<packaging>jar</packaging>
 
-	<name>loginService</name>
+	<name>ProcedureService</name>
 	<description>Producer for Spring Cloud Contract Demo</description>
 
 	<parent>
@@ -37,6 +37,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
 			<artifactId>spring-cloud-starter-contract-verifier</artifactId>
@@ -63,7 +64,8 @@
 		</dependency>
 	</dependencies>
 
-<dependencyManagement>
+	<!--Spring Cloud Dependencies-->
+	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.springframework.cloud</groupId>
@@ -117,9 +119,7 @@
 				</executions>
 			</plugin>
 
+
 		</plugins>
-			
 	</build>
-
-
 </project>
