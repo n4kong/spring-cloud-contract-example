@@ -13,7 +13,7 @@ Contract.make {
         }
         urlPath("/users") {
             queryParameters {
-                parameter 'limit': $(anyNumber())
+                parameter 'limit': $(anyNumber(), producer("3456"))
                 parameter 'filter': $(consumer(equalTo("email")))
                 parameter 'gender': $(consumer(regex("[m|f]")), producer('m'))
                 parameter 'offset': $(consumer(matching("[0-9]+")), producer("1234"))
@@ -55,8 +55,8 @@ Contract.make {
             queryParameters {
                 parameter 'limit': 100
                 parameter 'filter': $(consumer(optional(regex("[email]"))), producer(''))
-                parameter 'gender': value(consumer(containing("[mf]")), producer('mf'))
-                parameter 'offset': value(consumer(matching("[0-9]+")), producer("1234"))
+                parameter 'gender': $(consumer(containing("[mf]")), producer('mf'))
+                parameter 'offset': $(consumer(matching("[0-9]+")), producer("1234"))
             }
         }
     }
@@ -69,8 +69,7 @@ Contract.make {
                 ]
         )
     }
-}
-,
+},
 Contract.make {
     name("Create User Success")
     request {
