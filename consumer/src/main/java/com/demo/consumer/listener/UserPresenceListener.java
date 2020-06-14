@@ -14,7 +14,7 @@ import java.util.List;
 public class UserPresenceListener {
     private List<String> availableUsers = new ArrayList<>();
 
-    @RabbitListener(queues = "user-presence")
+    @RabbitListener(queues = "user.queue")
     public void handle(User user) {
         this.availableUsers.add(user.getName());
     }

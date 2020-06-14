@@ -24,7 +24,7 @@ public class ListenerTest {
 
     @Test
     public void shouldReceiveNotification() {
-        stubTrigger.trigger("contract-test.person.created.event");
+        stubTrigger.trigger("contract.user.message");
 
         assertTrue(this.userPresenceListener.getAvailableUsers().size() > 0);
     }

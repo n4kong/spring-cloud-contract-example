@@ -2,6 +2,7 @@ package com.demo.service;
 
 import com.demo.model.User;
 import org.springframework.amqp.core.AmqpTemplate;
+import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,9 +15,11 @@ public class UserService {
     }
 
     @Autowired
-    AmqpTemplate amqpTemplate;
+    RabbitTemplate rabbitTemplate;
 
-    public void createPerson() {
-        amqpTemplate.convertAndSend("user-presence", "" , new User(123, "John"));
+    public void sendUserMessage(String exchange, String routingKey, User user) {
+        rabbitTemplate.convertAndSend(exchange, routingKey, user);
     }
 }
+
+

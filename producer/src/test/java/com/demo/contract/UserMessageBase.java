@@ -1,6 +1,6 @@
 package com.demo.contract;
 
-import com.demo.ProducerServerApplication;
+import com.demo.model.User;
 import com.demo.service.UserService;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,11 +11,11 @@ import org.springframework.test.context.junit4.SpringRunner;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMessageVerifier
-public class StreamBase {
+public class UserMessageBase {
     @Autowired
     UserService userService;
 
-    protected void createPerson() {
-        userService.createPerson();
+    protected void mockSendUserMessage() {
+        userService.sendUserMessage("user.exchange", "some.routing.key", new User(99, "John"));
     }
 }

@@ -18,11 +18,11 @@ public class RabbitMQTestConfig {
     }
 
     private DirectExchange userPresenceExchange() {
-        return new DirectExchange("user-presence");
+        return new DirectExchange("user.exchange");
     }
 
     @Bean
     Queue userPresenceQueue() {
-        return new Queue("user-presence");
+        return new Queue("user.queue");
     }
 }
