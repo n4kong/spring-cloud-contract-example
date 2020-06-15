@@ -1,4 +1,4 @@
-package com.demo.util;
+package com.demo.processor;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.restdocs.operation.OperationRequest;

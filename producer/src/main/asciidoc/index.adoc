@@ -87,6 +87,14 @@ include::{snippets}/UserTest_validate_create_User_Success/request-body.adoc[]
 include::{snippets}/UserTest_validate_create_User_Success/http-response.adoc[]
 
 
+=== Message User
+Send event user to consumer
+
+.trigger message
+include::{snippets}/UserMessageTest_validate_shouldProduceValidMessage/request-body.adoc[]
+
+
+
 
 
 

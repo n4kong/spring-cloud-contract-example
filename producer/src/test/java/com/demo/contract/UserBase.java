@@ -4,7 +4,7 @@ import com.demo.ProducerServerApplication;
 import com.demo.controller.UserController;
 import com.demo.service.UserService;
 import com.demo.model.User;
-import com.demo.util.AddContextPathProcessor;
+import com.demo.processor.AddContextPathProcessor;
 import io.restassured.module.mockmvc.RestAssuredMockMvc;
 import org.junit.Before;
 import org.junit.Rule;

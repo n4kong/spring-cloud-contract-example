@@ -17,8 +17,6 @@ public class DemoController {
     @GetMapping("/search")
     public List<User> search() {
 
-        List<User> users = producerService.getUsers();
-
-        return users;
+        return producerService.getUsers();
     }
 }
