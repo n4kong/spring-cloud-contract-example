@@ -32,6 +32,19 @@
 			<artifactId>spring-boot-starter-web</artifactId>
 		</dependency>
 
+		<!--RabbitMQ-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-amqp</artifactId>
+		</dependency>
+
+		<!--For Swagger-->
+		<dependency>
+			<groupId>org.springdoc</groupId>
+			<artifactId>springdoc-openapi-ui</artifactId>
+			<version>1.4.0</version>
+		</dependency>
+
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
@@ -44,31 +57,13 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!--RabbitMQ-->
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-amqp</artifactId>
-		</dependency>
-
-		<!--		<dependency>-->
-<!--			<groupId>org.springframework.cloud</groupId>-->
-<!--			<artifactId>spring-cloud-contract-wiremock</artifactId>-->
-<!--			<scope>test</scope>-->
-<!--		</dependency>-->
-
-		<!--For Swagger-->
-		<dependency>
-			<groupId>org.springdoc</groupId>
-			<artifactId>springdoc-openapi-ui</artifactId>
-			<version>1.4.0</version>
-		</dependency>
-
 		<!--For Rest Docs-->
 		<dependency>
 			<groupId>org.springframework.restdocs</groupId>
 			<artifactId>spring-restdocs-mockmvc</artifactId>
-			<optional>true</optional>
+			<scope>test</scope>
 		</dependency>
+
 	</dependencies>
 
 	<!--Spring Cloud Dependencies-->
@@ -86,11 +81,8 @@
 
 	<build>
 		<plugins>
-			<!--For Spring contract-->
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
+
+			<!--Plugin to generate stub/test from contract-->
 			<plugin>
 				<groupId>org.springframework.cloud</groupId>
 				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
@@ -98,12 +90,11 @@
 				<extensions>true</extensions>
 				<configuration>
 					<packageWithBaseClasses>com.demo.contract</packageWithBaseClasses>
-<!--					<convertToYaml>true</convertToYaml>-->
-<!--					<failOnInProgress>false</failOnInProgress>-->
+					<convertToYaml>true</convertToYaml>
 				</configuration>
 			</plugin>
 
-			<!--Rest Docs-->
+			<!--Plugin to generate HTML from snippets-->
 			<plugin>
 				<groupId>org.asciidoctor</groupId>
 				<artifactId>asciidoctor-maven-plugin</artifactId>
@@ -126,7 +117,13 @@
 				</executions>
 			</plugin>
 
-
 		</plugins>
 	</build>
+
+	<distributionManagement>
+		<repository>
+			<id>contracts</id>
+			<url>https://nexus.tmn-dev.com/nexus/content/repositories/contracts/</url>
+		</repository>
+	</distributionManagement>
 </project>

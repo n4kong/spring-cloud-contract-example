@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
+import java.util.Random;
 
 @RestController
 public class UserController {
@@ -30,7 +31,7 @@ public class UserController {
 
     @PostMapping("/users")
     public ResponseEntity<Response> createUser(@RequestBody User user){
-
+        user.setId(new Random().nextLong());
         return new ResponseEntity<>(new Response("success", user), HttpStatus.OK);
     }
 }

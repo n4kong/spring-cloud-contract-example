@@ -1,53 +1,10 @@
 = Demo API
-thiagotn@gmail.com
+Rest Docs was generated from contract in Spring Cloud Contract
 :toc: left
 
 == Introduction
 
 This Demo API is intended to make it easy for you to understand how to use Spring REST Docs to produce high-quality documentation for your RESTful services.
-
-== Resources
-
-=== Create Product
-
-==== Login Mobile Client
-
-Api for creating product
-
-.curl request
-include::{snippets}/LoginMobileClientTest_validate_shouldMarkNotValidUser/curl-request.adoc[]
-
-.request
-include::{snippets}/LoginMobileClientTest_validate_shouldMarkNotValidUser/request-body.adoc[]
-
-.response
-include::{snippets}/LoginMobileClientTest_validate_shouldMarkNotValidUser/response-body.adoc[]
-
-==== Login Web Client
-
-.curl request
-include::{snippets}/LoginWebClientTest_validate_shouldMarkNotValidUser/curl-request.adoc[]
-
-.request body
-include::{snippets}/LoginWebClientTest_validate_shouldMarkNotValidUser/request-body.adoc[]
-
-.resonse body
-include::{snippets}/LoginWebClientTest_validate_shouldMarkNotValidUser/response-body.adoc[]
-
-
-
-=== Post Api Example
-
-Api for post
-
-.curl request
-include::{snippets}/PostApiExampleTest_validate_some_spacial_name/curl-request.adoc[]
-
-.request
-include::{snippets}/PostApiExampleTest_validate_some_spacial_name/request-body.adoc[]
-
-.response
-include::{snippets}/PostApiExampleTest_validate_some_spacial_name/response-body.adoc[]
 
 == List Users 
 
@@ -56,9 +13,6 @@ Given list user with correct request parameters
 
 .curl request
 include::{snippets}/UserTest_validate_list_user_success/curl-request.adoc[]
-
-.request
-include::{snippets}/UserTest_validate_list_user_success/request-body.adoc[]
 
 .response
 include::{snippets}/UserTest_validate_list_user_success/http-response.adoc[]
