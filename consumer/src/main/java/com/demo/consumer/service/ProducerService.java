@@ -4,11 +4,10 @@ import com.demo.consumer.model.CreateUserResponse;
 import com.demo.consumer.model.User;
 import com.demo.consumer.model.UserResponse;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.http.HttpEntity;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpMethod;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
 import org.springframework.stereotype.Service;
+import org.springframework.web.client.HttpServerErrorException;
+import org.springframework.web.client.HttpStatusCodeException;
 import org.springframework.web.client.RestTemplate;
 
 import java.util.List;
@@ -35,9 +34,13 @@ public class ProducerService {
         RestTemplate restTemplate = new RestTemplate();
         HttpHeaders httpHeaders = new HttpHeaders();
         httpHeaders.add(HttpHeaders.CONTENT_TYPE, "application/json");
-        httpHeaders.add("key","value");
+        httpHeaders.add("some-key","some-value");
 
-        ResponseEntity<CreateUserResponse> response = restTemplate.exchange(uri + "/users", HttpMethod.POST, new HttpEntity<>(user, httpHeaders), CreateUserResponse.class);
+
+        ResponseEntity<CreateUserResponse> response = restTemplate.exchange(uri + "/users",
+                HttpMethod.POST, new HttpEntity<>(user, httpHeaders), CreateUserResponse.class);
+
         return response.getBody().getData();
+
     }
 }
