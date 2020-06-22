@@ -4,7 +4,7 @@ Rest Docs was generated from contract in Spring Cloud Contract
 
 == Introduction
 
-This Demo API is intended to make it easy for you to understand how to use Spring REST Docs to produce high-quality documentation for your RESTful services.
+This Demo API is intended to make it easy for you to understand how to use Spring Cloud Contract to generate Rest Docs.
 
 == List Users 
 
@@ -29,16 +29,22 @@ include::{snippets}/UserTest_validate_list_User_Not_Found/http-response.adoc[]
 == Create User
 
 === Create User Success
-Given list user with correct request parameters
+Create user with correct request parameters
 
 .curl request
 include::{snippets}/UserTest_validate_create_User_Success/curl-request.adoc[]
 
-.request
-include::{snippets}/UserTest_validate_create_User_Success/request-body.adoc[]
-
 .response
 include::{snippets}/UserTest_validate_create_User_Success/http-response.adoc[]
+
+=== Create User with empty name
+Create user with correct request parameters
+
+.curl request
+include::{snippets}/UserTest_validate_create_user_when_name_is_empty_then_error_500/curl-request.adoc[]
+
+.response
+include::{snippets}/UserTest_validate_create_user_when_name_is_empty_then_error_500/http-response.adoc[]
 
 
 === Message User
@@ -52,7 +58,6 @@ include::{snippets}/UserMessageTest_validate_shouldProduceValidMessage/request-b
 
 
 
-== Contributions
+== Remark
 
-This Demo API is intended to make it easy for you to understand how to use Spring REST Docs to produce high-quality documentation for your RESTful services. However, we can’t achieve that goal without your contributions.
-Feel free to contribute to this repo (https://github.com/thiagotn/demo-api/), sending pull requests any time :)
+This Demo API is intended to make it easy for you to understand how to use Spring Cloud Contract to generate Rest Docs.

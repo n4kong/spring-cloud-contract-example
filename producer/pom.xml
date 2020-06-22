@@ -80,19 +80,19 @@
 	</dependencyManagement>
 
 	<build>
-		<plugins>
+	<plugins>
 
-			<!--Plugin to generate stub/test from contract-->
-			<plugin>
-				<groupId>org.springframework.cloud</groupId>
-				<artifactId>spring-cloud-contract-maven-plugin</artifactId>
-				<version>${spring-cloud-contract.version}</version>
-				<extensions>true</extensions>
-				<configuration>
-					<packageWithBaseClasses>com.demo.contract</packageWithBaseClasses>
-					<convertToYaml>true</convertToYaml>
-				</configuration>
-			</plugin>
+		<!--Plugin to generate stub/test from contract-->
+		<plugin>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-contract-maven-plugin</artifactId>
+			<version>${spring-cloud-contract.version}</version>
+			<extensions>true</extensions>
+			<configuration>
+				<packageWithBaseClasses>com.demo.contract</packageWithBaseClasses>
+				<convertToYaml>true</convertToYaml>
+			</configuration>
+		</plugin>
 
 			<!--Plugin to generate HTML from snippets-->
 			<plugin>
@@ -123,7 +123,7 @@
 	<distributionManagement>
 		<repository>
 			<id>contracts</id>
-			<url>https://nexus.tmn-dev.com/nexus/content/repositories/contracts/</url>
+			<url>https://nexus/nexus/content/repositories/contracts/</url>
 		</repository>
 	</distributionManagement>
 </project>

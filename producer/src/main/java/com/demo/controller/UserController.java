@@ -6,6 +6,7 @@ import com.demo.model.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -32,6 +33,7 @@ public class UserController {
     @PostMapping("/users")
     public ResponseEntity<Response> createUser(@RequestBody User user){
         user.setId(new Random().nextLong());
+
         return new ResponseEntity<>(new Response("success", user), HttpStatus.OK);
     }
 }
